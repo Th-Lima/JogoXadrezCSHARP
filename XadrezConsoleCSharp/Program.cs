@@ -16,15 +16,12 @@ namespace XadrezConsoleCSharp
                     try
                     {
                         Console.Clear();
-                        Tela.ImprimirTabuleiro(partida.tab);
-                        Console.WriteLine();
-                        Console.WriteLine("Turno: " + partida.turno);
-                        Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                        Tela.imprimirPartida(partida);
 
-                        Console.WriteLine();
                         Console.Write("Origem: ");
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDeOrigem(origem);
+
 
                         bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
