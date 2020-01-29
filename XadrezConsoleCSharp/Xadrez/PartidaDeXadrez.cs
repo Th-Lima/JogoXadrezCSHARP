@@ -90,7 +90,7 @@ namespace xadrez
         }
         public void validarPosicaoDeDestino(Posicao origem, Posicao destino)
         {
-            if (!tab.peca(origem).podeMoverPara(destino))
+            if (!tab.peca(origem).movimentoPossivel(destino))
             {
                 throw new TabuleiroException("Posição Inválida!");
             }
@@ -186,7 +186,7 @@ namespace xadrez
                             desfazMovimento(origem, destino,pecaCapturada);
                             if (!testeXeque)
                             {
-                                return false;
+                                return false; 
                             }
                         }
                     }
